@@ -11,13 +11,13 @@ import './app.css';
 const App = () => {
     return (
         <div className="app">
-            <AppHeader/>
+            <AppHeader />
             <div className="search-panel d-flex">
-                <SearchPanel/>
-                <PostStatusFilter/>
+                <SearchPanel />
+                <PostStatusFilter />
             </div>
-            <PostList/>
-            <PostAddForm/>
+            <PostList />
+            <PostAddForm />
         </div>
     );
 }
