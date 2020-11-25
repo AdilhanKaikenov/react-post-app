@@ -9,9 +9,9 @@ const Header = styled.div`
     justify-content: space-between;
     h1 {
         font-size: 26px;
-        color: ${props => props.colored ? 'blue' : 'black'};
+        color: ${props => props.colored ? 'black' : 'blue'};
         :hover {
-            color: black;
+            color: blue;
         }
     }
     h2 {
@@ -20,11 +20,11 @@ const Header = styled.div`
     }
 `
 
-const AppHeader = () => {
+const AppHeader = ({liked, allPosts}) => {
     return (
         <Header colored>
             <h1>Kaikenov Adilkhan</h1>
-            <h2>3 записей, из них понравилось 0</h2>
+            <h2>{allPosts} записей, из них понравилось {liked}</h2>
         </Header>
     )
 }

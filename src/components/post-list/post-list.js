@@ -4,7 +4,7 @@ import PostListItem from '../post-list-item';
 import { ListGroup } from 'reactstrap';
 import './post-list.css';
 
-const PostList = ({posts}) => {
+const PostList = ({posts, onDelete, onToggleImportant, onToggleLiked}) => {
 
     const elements = posts.map(item => {
         // A simple way to check for an object + whether it contains information
@@ -13,8 +13,15 @@ const PostList = ({posts}) => {
 
             return (
                 <li key={id} className="list-group-item">
-                    <PostListItem {...itemProps} />
-                    {/* <PostListItem label={item.label} important={item.important} /> */}
+                    <PostListItem 
+                        {...itemProps} 
+                        onDelete={() => onDelete(id)}
+                        onToggleImportant={() => onToggleImportant(id)}
+                        onToggleLiked={() => onToggleLiked(id)} />
+                    {/* <PostListItem 
+                        label={item.label} 
+                        important={item.important} 
+                        onDelete /> */}
                 </li>
             )
         }
