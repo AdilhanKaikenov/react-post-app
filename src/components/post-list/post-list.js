@@ -7,17 +7,26 @@ import './post-list.css';
 const PostList = ({posts}) => {
 
     const elements = posts.map(item => {
+        // A simple way to check for an object + whether it contains information
+        if ( typeof item === 'object' && isEmpty(item) ) { 
+            const {id, ...itemProps} = item;
 
-        const {id, ...itemProps} = item;
-
-        return (
-            <li key={id} className="list-group-item">
-                <PostListItem {...itemProps} />
-                {/* <PostListItem label={item.label} important={item.important} /> */}
-            </li>
-        )
+            return (
+                <li key={id} className="list-group-item">
+                    <PostListItem {...itemProps} />
+                    {/* <PostListItem label={item.label} important={item.important} /> */}
+                </li>
+            )
+        }
     })
 
+    function isEmpty(obj) {
+        for(let key in obj)
+        {
+            return true;
+        }
+        return false;
+    }
 
     return (
         <ul className="app-list list-group">
