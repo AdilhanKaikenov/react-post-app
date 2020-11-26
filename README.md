@@ -26,6 +26,12 @@ I have worked with bootstrap:
 - https://www.bootstrapcdn.com/
 - https://reactstrap.github.io/
 - https://react-bootstrap.github.io/
+```
+npm install reactstrap bootstrap@4 --save
+```
 
 I have worked with styled-components:
 - https://styled-components.com/
+```
+npm install --save styled-components
+```
